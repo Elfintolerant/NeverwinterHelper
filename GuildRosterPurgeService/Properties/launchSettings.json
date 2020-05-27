@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "GuildRosterPurgeService": {
+      "commandName": "Project",
+      "commandLineArgs": "--RosterPurge:InputFile=E:\\Documents\\GBD\\Rosters\\Roster_20200518.csv --RosterPurge:RosterDate=20200518",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
