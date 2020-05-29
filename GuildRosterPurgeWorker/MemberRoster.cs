@@ -7,7 +7,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeverwinterHelper.GuildRosterPurgeService
+namespace NeverwinterHelper.GuildRosterPurgeWorker
 {
     public class MemberRoster : IDisposable
     {

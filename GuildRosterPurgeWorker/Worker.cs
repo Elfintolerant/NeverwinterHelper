@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace NeverwinterHelper.GuildRosterPurgeService
+namespace NeverwinterHelper.GuildRosterPurgeWorker
 {
     public class Worker : BackgroundService
     {
@@ -41,7 +41,7 @@ namespace NeverwinterHelper.GuildRosterPurgeService
 
             try
             {
-                if (TryValidateInputFile(_options.InputFile, out inputFilename) && TryGenerateOutputFilename(_options.OutputFile,inputFilename, out outputFilename) && TryGenerateCutoffDate(_options.RosterDate, out cutoffDate))
+                if (TryValidateInputFile(_options.InputFile, out inputFilename) && TryGenerateOutputFilename(_options.OutputFile,inputFilename, out outputFilename) && TryGenerateCutoffDate(_options.RosterDate, _options.InactiveMonths, out cutoffDate))
                 {
                     Dictionary<string, DateTime> lastActiveRoster = await _memberRoster.GenerateLastActiveRoster(inputFilename).ConfigureAwait(false);
 
@@ -87,7 +87,7 @@ namespace NeverwinterHelper.GuildRosterPurgeService
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "This method never throws an exception by design. it always returns a bool.")]
-        private bool TryGenerateCutoffDate(string rosterDate, out DateTime cutoffDate)
+        private bool TryGenerateCutoffDate(string rosterDate, int inactiveMonths, out DateTime cutoffDate)
         {
             bool returnValue = false;
             cutoffDate = DateTime.Now.AddMonths(-1);
@@ -101,7 +101,7 @@ namespace NeverwinterHelper.GuildRosterPurgeService
                         DateTime rDate;
                         if (DateTime.TryParse($"{rosterDate.Substring(4, 2)}/{rosterDate.Substring(6, 2)}/{rosterDate.Substring(0, 4)}", out rDate))
                         {
-                            cutoffDate = rDate.AddMonths(-1);
+                            cutoffDate = rDate.AddMonths((-1 * inactiveMonths));
                             returnValue = true;
 
                         }

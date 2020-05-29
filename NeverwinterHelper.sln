@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuildRosterPurgeService", "GuildRosterPurgeService\GuildRosterPurgeService.csproj", "{ED03E9D7-DEF0-4452-BCA4-A95C4A89A213}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{813B0BB1-D5B4-4610-9152-48943FA2299A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildRosterPurgeWorker", "GuildRosterPurgeWorker\GuildRosterPurgeWorker.csproj", "{D572CCB1-6F3B-4297-A637-C106B4822358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +46,26 @@ Global
 		{ED03E9D7-DEF0-4452-BCA4-A95C4A89A213}.Release|x64.Build.0 = Release|Any CPU
 		{ED03E9D7-DEF0-4452-BCA4-A95C4A89A213}.Release|x86.ActiveCfg = Release|Any CPU
 		{ED03E9D7-DEF0-4452-BCA4-A95C4A89A213}.Release|x86.Build.0 = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|ARM.Build.0 = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|x64.Build.0 = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Debug|x86.Build.0 = Debug|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|ARM.Build.0 = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|ARM64.Build.0 = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|x64.ActiveCfg = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|x64.Build.0 = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|x86.ActiveCfg = Release|Any CPU
+		{D572CCB1-6F3B-4297-A637-C106B4822358}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

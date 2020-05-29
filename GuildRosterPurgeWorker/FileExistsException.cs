@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace NeverwinterHelper.GuildRosterPurgeService
+namespace NeverwinterHelper.GuildRosterPurgeWorker
 {
     public class FileExistsException : Exception
     {
