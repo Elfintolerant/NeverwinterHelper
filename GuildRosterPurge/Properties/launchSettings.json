@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "GuildRosterPurge": {
-      "commandName": "Project",
-      "commandLineArgs": "-i E:\\Documents\\GBD\\Rosters\\Roster_20200518.csv -r 20200518"
-    }
-  }
-}
