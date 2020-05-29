@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NeverwinterHelper.GuildRosterPurgeService
+namespace NeverwinterHelper.GuildRosterPurgeWorker
 {
     internal static class Constants
     {

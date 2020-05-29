@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NeverwinterHelper.GuildRosterPurgeService
+namespace NeverwinterHelper.GuildRosterPurgeWorker
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses", Justification = "Late bound")]
     internal class GuildRosterLayout

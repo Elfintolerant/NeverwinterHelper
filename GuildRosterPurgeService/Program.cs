@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using CommandLine;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NeverwinterHelper.GuildRosterPurgeWorker;
 using Serilog;
 
 namespace NeverwinterHelper.GuildRosterPurgeService
@@ -15,8 +18,32 @@ namespace NeverwinterHelper.GuildRosterPurgeService
         //todo: add debug level logging
         public static void Main(string[] args)
         {
-            //todo: consider looking for -? --help hereZ???
-            CreateHostBuilder(args).Build().Run();
+            var result = Parser.Default.ParseArguments<CommandLineOptions>(args)
+                .WithParsed<CommandLineOptions>(Options =>
+                    CreateHostBuilder(BuildConfiguration(Options)).Build().Run());
+        }
+
+        private static string[] BuildConfiguration(CommandLineOptions commandLineOptions)
+        {
+            List<string> returnValue = new List<string>
+            {
+                "--RosterPurge:InputFile",
+                commandLineOptions.InputFile,
+
+                "--RosterPurge:RosterDate",
+                commandLineOptions.RosterDate,
+
+                "--RosterPurge:InactiveMonths",
+                commandLineOptions.InactiveMonths.ToString(CultureInfo.InvariantCulture)
+            };
+
+            if (!string.IsNullOrWhiteSpace(commandLineOptions.OutputFile))
+            {
+                returnValue.Add("--RosterPurge:OutputFile");
+                returnValue.Add(commandLineOptions.OutputFile);
+            }
+
+            return returnValue.ToArray();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
